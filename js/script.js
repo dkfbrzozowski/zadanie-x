@@ -1,10 +1,16 @@
 function name() {
+	/*var backimage = faker.fake("<img src=\"{{image.image}}\">");
+	document.getElementById('backimg').innerHTML = backimage;
+	
+	próbowałem losowo generować background do box_top
+	*/
 	var image = faker.fake("<img src=\"{{image.avatar}}\">");
 	document.getElementById('image').innerHTML = image;
 	
 	var name = faker.fake("{{name.firstName}}" + " " + "{{name.lastName}}");
 	document.getElementById('name').innerHTML = name;
-	
+	document.getElementById('tweet_button').innerHTML = "Tweet to" + " " + name;
+
 	var tweeter = "@" + name;
 	
 	var lower = tweeter.toLowerCase().replace(" ","");
@@ -19,6 +25,8 @@ function name() {
 	var wwwsite = faker.fake("{{internet.domainName}}");
 	if (wwwsite.length > '10') {
 		document.getElementById('wwwsite').innerHTML = wwwsite.link();
+	} else {
+			document.getElementById('wwwsite').innerHTML = "no www site";
 	}
 	/*
 	wcześniej miałem napisane w ten sposób:
@@ -34,7 +42,7 @@ function name() {
 
 	*/
 	
-	var month = "Joined" + " " + faker.fake("{{date.month}}");
+	var month = "Joined" + " " + faker.fake("{{date.past}}");
 	document.getElementById('birthdate').innerHTML = month;
 }
 name();
