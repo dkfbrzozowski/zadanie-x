@@ -17,7 +17,22 @@ function name() {
 	document.getElementById('location').innerHTML = location;
 	
 	var wwwsite = faker.fake("{{internet.domainName}}");
-	document.getElementById('wwwsite').innerHTML = wwwsite;
+	if (wwwsite.length > '10') {
+		document.getElementById('wwwsite').innerHTML = wwwsite.link();
+	}
+	/*
+	wcześniej miałem napisane w ten sposób:
+
+	var wwwsite = faker.fake("{{internet.domainName}}");
+	if (wwwsite.lenght > 10) {
+		document.getElementById('wwwsite').innerHTML = wwwsite.link;
+	}
+	
+	- poprawiłem literówkę w .length (te literówki mnie wykończą)
+	- w warunku 10 dałem w ''
+	- w wyniku po .link dodałem ()
+
+	*/
 	
 	var month = "Joined" + " " + faker.fake("{{date.month}}");
 	document.getElementById('birthdate').innerHTML = month;
