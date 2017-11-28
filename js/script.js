@@ -1,10 +1,8 @@
 function name() {
-	/*var backimage = faker.fake("<img src=\"{{image.image}}\">");
-	document.getElementById('backimg').innerHTML = backimage;
+	var back = faker.fake("{{commerce.color}}");
+	document.getElementById('backimg').style.background = back;
 	
-	próbowałem losowo generować background do box_top
-	*/
-	var image = faker.fake("<img src=\"{{image.avatar}}\">");
+	var image = faker.fake("<img src=\"{{internet.avatar}}\">");
 	document.getElementById('image').innerHTML = image;
 	
 	var name = faker.fake("{{name.firstName}}" + " " + "{{name.lastName}}");
